@@ -1,0 +1,191 @@
+<!DOCTYPE   html>
+<html   lang="en">
+    <head>
+        <meta   charset="utf-8"/>
+        <meta   name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta   name="keywords" content="php环境搭建，MySQL+Apache+PHP搭建，MySQL，Apache，PHP搭建，前端，后端，后台环境"/>
+        <meta   name="description"  content="MySQL+Apache+PHP搭建php运行环境"/>
+        <title>随笔一记-方便自己，帮助他人</title>
+        <link   rel="icon"  href="img/nd.ico"   type="image/x-icon"/>
+        <link   rel="stylesheet"    href="css/build_mysql&apche&php.css"/>
+    </head>
+    <body>
+    
+    <!-- header -->
+        <div    class="header">
+            <a  href="http://www.newdiscovery.cc"><img    class="logo"    src="img/logo.png"/></a>
+            <ul class="nav clear">
+                <li>
+                    <a  href="index.html">首页</a>
+                </li>
+                <li>
+                    <a  href="#">前端编程</a>
+                </li>
+                <li>
+                    <a  href="#">后端编程</a>
+                </li>
+                <li>
+                    <a  href="notes.html">技术分享</a>
+                </li>
+                <li>
+                    <a  href="#">编程日记</a>
+                </li>
+                <li>
+                    <a  href="#">关于我的</a>
+                </li>
+            </ul> 
+        </div>
+    <!-- end header -->
+    
+    <!-- content -->
+        <div    class="content">
+            <div    class="content_wrap">
+                <div    class="note01">
+                    <h3 id="title01">如何配置 MySQL + Apache + Php 环境</h3>
+                    
+                    <div    class="message_bottom clear">
+                        <span   class="message_bottom_left">环境搭建</span>
+                        <span   class="message_bottom_center">99 人阅读</span>
+                        <span   class="message_bottom_right">2017/05/29/23:03</span>
+                    </div>
+                    <div    class="main_text">
+                        <h4>本文为原创文章，转载请注明出处！</h4>
+                        <p>前端学习和工作中，免不了要和后端打交道，当下流行的后端又以php语言流行最广，于是萌生了学习php的冲动，当打开学习文档，php环境搭建就难住了不少同学，今天我以自身学习经历来讲讲php环境之MySQL+Apache+PHP搭建。</p>
+                        <p>才接触php学习文档时，由于对其知之甚少，介绍到运行环境时，突然冒出个新鲜事物MySQL + Apache + Php 环境搭建，给我的第一感觉很是高大上，于是乎便默默发誓一定要掌握这个环境搭建（后来工作接触到了，才发现其实有其他工具可代替），期间在网上找了很多文章，写的都比较含糊或方法有误，在多次尝试失败后终于找到方法（所以，想放弃时再努力一把也许就成功了哈，自勉！！！）。好了，现在开始正式开启环境搭建之路。</p>
+                        <h2>一.安装MySQL</h2>
+                        <p>直接搜索“MySQL”，找到其官网，进入<a  class="main_text_link" href="https://dev.mysql.com/downloads/installer/">下载页面</a>，找到相应版本通过免配置来安装，很简单的过程。</p>
+                        <h2>二.安装Apache</h2>
+                        <p>注意：安装Apache要留意版本与PHP的兼容性，这安装的是Apache2.4版本。</p>
+                        <p>①到Apache官网下载软件，解压放在G盘（以G盘为例，后文不再说明），新建文件夹命名Apache24，“G:/Apache24”；</p>
+                        <p>②在文件夹Apache24中找到httpd.conf文件，双击打开；查找“SRVROOT"/Apache24"”，修改为“G:/Apache24”；</p>
+                        <p>③同样在httpd.conf文件中查找“Listen80”，修改为“Listen8080”；</p>
+                        <p>④以管理员身份打开命令提示符，输入“cmd”回车，再输入“g:”并回车，然后输入"Apache24/bin/httpd.exe" -k install；</p>
+                        <p>⑤在“Apache24/bin/”打开程序，至此Apache24安装完成；</p>
+                        <h2>三.设置PHP与Apache24的兼容配置</h2>
+                        <p>①把PHP5.4.45压缩包放到G盘下新建的文件夹php5中；</p>
+                        <p>②解压缩此压缩包文件；</p>
+                        <p>③找到目录文件中的php.ini-development,并把它修改为php.ini；</p>
+                        <p>④双击打开php.ini文件，查找extension_dir,将extension_dir前面的分号去掉，然后在其后面添加php的扩展路径：extension_dir="G:/php5/ext"(ext是php的扩展库)；</p>
+                        <p>⑤打开Apache24安装目录，找到conf目录下面的httpd.conf，双击打开；找到#LoadModule区域，在它下面添加如下代码：</p>
+                        <p>LoadModule php5_module G:/php5/php5apache2_4.dll</p>
+                        <p>PHPIniDir "G:/php5"</p>
+                        <p>AddType application/x-httpd-php .php .phtml</p>
+                        <p>⑥在apache24/htdocs目录下新建一个test.php文件,内容随意写</p>
+                        <p>⑦启动Apache，启动成功后，一般就说明Apache和PHP已经搭建成功，在浏览器地址栏输入“127.0.0.0:8080/test.php”或者“localhost:8080/test.php”，如果出现php的测试页，则书名配置成功。</p>
+                        <h2>恭喜你，完成PHP环境之MySQL+Apache+PHP的配置</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- end content -->
+    
+    <!-- footer -->
+        <div    class="footer">
+            <div    class="footer_wrap">
+                <ul class="footer_nav clear">
+                    <li>
+                        <a  href="#">首页</a>
+                    </li>
+                    <li>
+                        <a  href="#">前端编程</a>
+                    </li>
+                    <li>
+                        <a  href="#">后端编程</a>
+                    </li>
+                    <li>
+                        <a  href="notes.html">技术分享</a>
+                    </li>
+                    <li>
+                        <a  href="#">编程日记</a>
+                    </li>
+                    <li>
+                        <a  href="#">关于我的</a>
+                    </li>
+                </ul>
+                <p>湘ICP备16010401号-1 2017  NEWDISCOVERY.COM  版权所有</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

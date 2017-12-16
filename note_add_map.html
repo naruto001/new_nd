@@ -1,0 +1,258 @@
+<!DOCTYPE   html>
+<html   lang="en">
+    <head>
+        <meta   charset="utf-8"/>
+        <meta   name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta   name="keywords" content="百度地图API，如何添加百度地图API，地图API，网站地图"/>
+        <meta   name="description"  content="如何在网页中添加百度地图API相关功能"/>
+        <title>随笔一记-方便自己，帮助他人</title>
+        <link   rel="icon"  href="img/nd.ico"   type="image/x-icon"/>
+        <link   rel="stylesheet"    href="css/note_add_map.css"/>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=1.1&amp;ak=&amp;services=true&amp;t=20130716024058"></script>
+    </head>
+    <body>
+    
+    <!-- header -->
+        <div    class="header">
+            <a  href="http://www.newdiscovery.cc"><img    class="logo"    src="img/logo.png"/></a>
+            <ul class="nav clear">
+                <li>
+                    <a  href="index.html">首页</a>
+                </li>
+                <li>
+                    <a  href="#">前端编程</a>
+                </li>
+                <li>
+                    <a  href="#">后端编程</a>
+                </li>
+                <li>
+                    <a  href="notes.html">技术分享</a>
+                </li>
+                <li>
+                    <a  href="#">编程日记</a>
+                </li>
+                <li>
+                    <a  href="#">关于我的</a>
+                </li>
+            </ul> 
+        </div>
+    <!-- end header -->
+    
+    <!-- content -->
+        <div    class="content">
+            <div    class="content_wrap">
+                <div    class="note01">
+                    <h3 id="title01">如何在网页中添加百度地图相关功能</h3>
+                    
+                    <div    class="message_bottom clear">
+                        <span   class="message_bottom_left">API使用</span>
+                        <span   class="message_bottom_center">306 人阅读</span>
+                        <span   class="message_bottom_right">2017/06/12/21:25</span>
+                    </div>
+                    <div    class="main_text">
+                        <h4>本文为原创文章，转载请注明出处！</h4>
+                        <p>如今很多企业公司网站，为了方便客户，在公司官网页面中添加了百度地图相关查找功能，不仅可以很直观的查看公司的具体位置，更能通过在线地图进行公交路线查询、最短路线查询等。我将结合我的学习经验进行相关讲解，让大家可以很快的上手这一块。</p>
+                        <h2>一.向head头文件里面添加如下代码</h2>
+                        <img    class="map_01"   src="img/map_01.png"/>
+                        <p>以上代码展示的是V1.1版本时所需向head里面添加的代码，如果你使用的是V1.5以后的版本，则需要到百度地图API官网申请密钥才能进行后续步骤，具体有何区别呢？V1.1等版本可以不用密钥，可以在任何ip的网站中使用，当V1.5以后的版本则必须有密钥，并且对应唯一的ip，如果需要具体了解他们之间的差异，请移步百度API官网进行相应文档阅读。</p>
+                        <h2>二.在网页body里面添加一个div，并且命名其id="container"</h2>
+                        <img    class="map_01" src="img/map_02.png"/>
+                        <p>添加完id="container"的div后，给其进行简单的样式设置，这个div就是准备放置百度地图的容器，当然宽度和高度由你自己视情况来决定。</p>
+                        <h2>三.编写js代码，进行地图相关设置</h2>
+                        <img    class="map_01" src="img/map_03.png"/>
+                        <p>对照上面的js代码敲一遍，你就可以初步了解如何实现网站的百度地图功能了，只需了解其相关规则，相信很快就能上手百度地图API。</p>
+                        <div    id="container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- end content -->
+    
+    <!-- footer -->
+        <div    class="footer">
+            <div    class="footer_wrap">
+                <ul class="footer_nav clear">
+                    <li>
+                        <a  href="#">首页</a>
+                    </li>
+                    <li>
+                        <a  href="#">前端编程</a>
+                    </li>
+                    <li>
+                        <a  href="#">后端编程</a>
+                    </li>
+                    <li>
+                        <a  href="notes.html">技术分享</a>
+                    </li>
+                    <li>
+                        <a  href="#">编程日记</a>
+                    </li>
+                    <li>
+                        <a  href="#">关于我的</a>
+                    </li>
+                </ul>
+                <p>湘ICP备16010401号-1 2017  NEWDISCOVERY.COM  版权所有</p>
+            </div>
+        </div>
+        <script>
+            var map = new BMap.Map("container");                 //创建地图实例
+            var point = new BMap.Point(112.944201,28.201381);    //创建中心点
+            map.centerAndZoom(point,15);                         //初始化地图实例，并创建地图中心点和地图层级
+            
+            var scale = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT});   //创建比例尺，放在左上角位置
+            var nav = new BMap.NavigationControl();                             //创建平移
+            map.addControl(scale);                                              //将比例尺添加到地图上
+            map.addControl(nav);                                                //将平移添加到地图上
+            
+            var overView = new BMap.OverviewMapControl();                                                     //创建地图缩略图
+            var overViewOpen = new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});  //创建地图缩略图默认状态是打开状态
+            map.addControl(overView);                                                                         //将地图缩略图添加到地图上
+            map.addControl(overViewOpen);                                                                     //将地图缩略图的默认打开状态添加到地图上
+            
+            var marker = new BMap.Marker(point);                 //创建点标注
+            map.addOverlay(marker);                              //将标注点添加到地图上
+           // marker.setAnimation(BMAP_ANIMATION_BOUNCE);          //v2.0版本申请了密钥才能实现此功能，V1.1版本无法完成标注点弹跳
+            
+            var point2 = new BMap.Point(112.947313,28.208526);                                                       //创建一个新的点
+            var icon01 = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(850,100)); //创建一个icon图标，并且设置偏移值
+            var marker2 = new BMap.Marker(point2,{icon:icon01});                                                     //创建新的点标注
+            map.addOverlay(marker2);                                                                                 //将新的标注点添加到地图上
+            
+            /////////////////////////////添加文字标签///////////////////////////////////
+            var point3 = new BMap.Point(112.940486,28.202605);         //在V1.1版本“文字标签”只能停靠在container的左上角（0,0）的位置
+            var opts = {                                               //用V2.0版本可以使“文字标签”停靠在所设置的point的偏移值那里
+                position: point3,
+                offset: new BMap.Size(0,0)
+            }
+            var label = new BMap.Label("公司名称及简单介绍",opts);
+            label.setStyle({
+                color:"red",
+                fontSize:"12px",
+                height:"20px",
+                lineHeight: "20px",
+                fontFamily:"微软雅黑"
+            });
+            map.addOverlay(label);
+            /////////////////////////////添加文字标签///////////////////////////////////
+        
+        
+            ////////////////////////设置覆盖物的文字标签////////////////////////////////////
+            var point4 = new BMap.Point(112.946530,28.206666);                                     //设置一个新的点
+            var marker3 = new BMap.Marker(point4);                                                 //在这个新点point4处创建一个点标注
+            map.addOverlay(marker3);                                                               //将这个新的点标注marker3添加到地图上
+            var label2 = new BMap.Label("这里是另一个文字标注",{offset:new BMap.Size(20,-10)});    //创建文字标签并设置偏移值
+            marker3.setLabel(label2);                                                              //
+            ////////////////////////设置覆盖物的文字标签////////////////////////////////////
+            
+            
+            var content = "<table>";  
+                content = content + "<tr><td> 编号：001</td></tr>";  
+                content = content + "<tr><td> 地点：长沙市岳麓区</td></tr>"; 
+                content = content + "<tr><td> 时间：2014-09-26</td></tr>";  
+                content = content + "<tr><td> 电话：888888888</td></tr>"; 
+                content += "</table>";
+            var infowindow = new BMap.InfoWindow(content);
+            marker2.addEventListener("click",function(){
+                this.openInfoWindow(infowindow);
+            });
+            
+            var opts5 = {
+              width : 200,     // 信息窗口宽度
+              height: 100,     // 信息窗口高度
+              title : "海底捞王府井店" , // 信息窗口标题
+              enableMessage:true,//设置允许信息窗发送短息
+              message:"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+            }
+            var infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts5);  // 创建信息窗口对象 
+            marker3.addEventListener("click", function(){          
+                this.openInfoWindow(infoWindow,point); //开启信息窗口
+            });
+            
+            map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+            map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

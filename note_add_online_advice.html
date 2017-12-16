@@ -1,0 +1,297 @@
+<!DOCTYPE   html>
+<html   lang="en">
+    <head>
+        <meta   charset="utf-8"/>
+        <meta   name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta   name="keywords" content="百度地图API，如何添加百度地图API，地图API，网站地图"/>
+        <meta   name="description"  content="如何在网页中添加百度地图API相关功能"/>
+        <title>随笔一记-方便自己，帮助他人</title>
+        <link   rel="icon"  href="img/nd.ico"   type="image/x-icon"/>
+        <link   rel="stylesheet"    href="css/note_add_online_advice.css"/>
+    </head>
+    <body>
+    
+    <!-- header -->
+        <div    class="header">
+            <a  href="http://www.newdiscovery.cc"><img    class="logo"    src="img/logo.png"/></a>
+            <ul class="nav clear">
+                <li>
+                    <a  href="index.html">首页</a>
+                </li>
+                <li>
+                    <a  href="#">前端编程</a>
+                </li>
+                <li>
+                    <a  href="#">后端编程</a>
+                </li>
+                <li>
+                    <a  href="notes.html">技术分享</a>
+                </li>
+                <li>
+                    <a  href="#">编程日记</a>
+                </li>
+                <li>
+                    <a  href="#">关于我的</a>
+                </li>
+            </ul> 
+        </div>
+    <!-- end header -->
+    
+    <!-- content -->
+        <div    class="content">
+            <div    class="content_wrap">
+                <div    class="note01">
+                    <h3 id="title01">原生实现网页右侧在线客服功能</h3>
+                    
+                    <div    class="message_bottom clear">
+                        <span   class="message_bottom_left">实用功能</span>
+                        <span   class="message_bottom_center">910 人阅读</span>
+                        <span   class="message_bottom_right">2017/09/05/11:02</span>
+                    </div>
+                    <div    class="main_text">
+                        <h4>本文为原创文章，转载请注明出处！</h4>
+                        <p>今天介绍的是一个很常见并且很实用的一个页面功能——在线客服。相信很多朋友在浏览网站时，都可以在页面右侧或者左侧看到过类似功能的服务。有时页面内容不是很详细或者存在疑问，我们可以通过这个“在线客服”功能进行在线的咨询，可以说是一个很贴合实际、人性化的功能模块。如果你之前没有接触过类似功能模块的开发，或者曾经你觉得这个“在线客服”功能很繁琐，相信看过这篇详细介绍的技术说明后，你会顿时云开雾散，当然看的时候觉得容易，一定要自己亲手敲一遍代码才能领略其中的真谛！</p>
+                        <h5>一.分析“在线客服”功能构成</h5>
+                        <p>1.首先这个在线客服功能模块需要使用固定布局，以便拖动滚动条时可以固定在窗口的一个位置</p>
+                        <p>2.根据展示客服多少，可以选择用ul或者dl进行放置内容，这里我用的dl</p>
+                        <p>3.按需展示和隐藏在线客服</p>
+                        <h5>二.各个击破进行编程</h5>
+                        <p>1.在线客服模块的html结构层展示</p>
+                        <img class="case01" src="img/case01.png"/>
+                        <p>2.在线客服模块的css样式层展示</p>
+                        <img class="case02" src="img/case02.png"/>
+                        <p>到这一步，在线客服功能模块就完成了，照着上面的代码敲一遍，相信记忆会更深刻！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- end content -->
+    
+    
+    <!-- online_advice-->
+    <div    class="online_advice">
+            <dl>
+                <dt></dt>
+                <dd class="advice">
+                    <span>在线咨询</span>
+                    <div    class="show_left">
+                        <a  href="http://wpa.qq.com/msgrd?v=3&uin=2388272488&site=qq&menu=yes">点此在线咨询</a>
+                    </div>
+                </dd>
+                <dd class="advice">
+                    <span>在线咨询</span>
+                    <div    class="show_left">
+                        <a  href="http://wpa.qq.com/msgrd?v=3&uin=2388272488&site=qq&menu=yes">点此在线咨询</a>
+                    </div>
+                </dd>
+                <dd class="advice">
+                    <span>在线咨询</span>
+                    <div    class="show_left">
+                        <a  href="http://wpa.qq.com/msgrd?v=3&uin=2388272488&site=qq&menu=yes">点此在线咨询</a>
+                    </div>
+                </dd>
+                <dd class="qr_code">
+                    <span>扫一扫</span>
+                    <div    class="show_left show_left_style">
+                        <i></i>
+                        <p class="qr_code01">扫一扫<br/>新得网新发现</p>
+                        <p class="qr_code02">关注新得网<br><b>0731-888888888<b></p>
+                    </div>
+                </dd>
+                <dd class="backto_top">
+                    <span onClick="gotoTop();return false;">返回顶部</span>
+                </dd>
+            </dl>
+    </div>
+    <!-- end online_advice-->
+    
+    
+    
+    <!-- footer -->
+        <div    class="footer">
+            <div    class="footer_wrap">
+                <ul class="footer_nav clear">
+                    <li>
+                        <a  href="#">首页</a>
+                    </li>
+                    <li>
+                        <a  href="#">前端编程</a>
+                    </li>
+                    <li>
+                        <a  href="#">后端编程</a>
+                    </li>
+                    <li>
+                        <a  href="notes.html">技术分享</a>
+                    </li>
+                    <li>
+                        <a  href="#">编程日记</a>
+                    </li>
+                    <li>
+                        <a  href="#">关于我的</a>
+                    </li>
+                </ul>
+                <p>湘ICP备16010401号-1 2017  NEWDISCOVERY.COM  版权所有</p>
+            </div>
+        </div>
+        <script>
+            var map = new BMap.Map("container");                 //创建地图实例
+            var point = new BMap.Point(112.944201,28.201381);    //创建中心点
+            map.centerAndZoom(point,15);                         //初始化地图实例，并创建地图中心点和地图层级
+            
+            var scale = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT});   //创建比例尺，放在左上角位置
+            var nav = new BMap.NavigationControl();                             //创建平移
+            map.addControl(scale);                                              //将比例尺添加到地图上
+            map.addControl(nav);                                                //将平移添加到地图上
+            
+            var overView = new BMap.OverviewMapControl();                                                     //创建地图缩略图
+            var overViewOpen = new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});  //创建地图缩略图默认状态是打开状态
+            map.addControl(overView);                                                                         //将地图缩略图添加到地图上
+            map.addControl(overViewOpen);                                                                     //将地图缩略图的默认打开状态添加到地图上
+            
+            var marker = new BMap.Marker(point);                 //创建点标注
+            map.addOverlay(marker);                              //将标注点添加到地图上
+           // marker.setAnimation(BMAP_ANIMATION_BOUNCE);          //v2.0版本申请了密钥才能实现此功能，V1.1版本无法完成标注点弹跳
+            
+            var point2 = new BMap.Point(112.947313,28.208526);                                                       //创建一个新的点
+            var icon01 = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(850,100)); //创建一个icon图标，并且设置偏移值
+            var marker2 = new BMap.Marker(point2,{icon:icon01});                                                     //创建新的点标注
+            map.addOverlay(marker2);                                                                                 //将新的标注点添加到地图上
+            
+            /////////////////////////////添加文字标签///////////////////////////////////
+            var point3 = new BMap.Point(112.940486,28.202605);         //在V1.1版本“文字标签”只能停靠在container的左上角（0,0）的位置
+            var opts = {                                               //用V2.0版本可以使“文字标签”停靠在所设置的point的偏移值那里
+                position: point3,
+                offset: new BMap.Size(0,0)
+            }
+            var label = new BMap.Label("公司名称及简单介绍",opts);
+            label.setStyle({
+                color:"red",
+                fontSize:"12px",
+                height:"20px",
+                lineHeight: "20px",
+                fontFamily:"微软雅黑"
+            });
+            map.addOverlay(label);
+            /////////////////////////////添加文字标签///////////////////////////////////
+        
+        
+            ////////////////////////设置覆盖物的文字标签////////////////////////////////////
+            var point4 = new BMap.Point(112.946530,28.206666);                                     //设置一个新的点
+            var marker3 = new BMap.Marker(point4);                                                 //在这个新点point4处创建一个点标注
+            map.addOverlay(marker3);                                                               //将这个新的点标注marker3添加到地图上
+            var label2 = new BMap.Label("这里是另一个文字标注",{offset:new BMap.Size(20,-10)});    //创建文字标签并设置偏移值
+            marker3.setLabel(label2);                                                              //
+            ////////////////////////设置覆盖物的文字标签////////////////////////////////////
+            
+            
+            var content = "<table>";  
+                content = content + "<tr><td> 编号：001</td></tr>";  
+                content = content + "<tr><td> 地点：长沙市岳麓区</td></tr>"; 
+                content = content + "<tr><td> 时间：2014-09-26</td></tr>";  
+                content = content + "<tr><td> 电话：888888888</td></tr>"; 
+                content += "</table>";
+            var infowindow = new BMap.InfoWindow(content);
+            marker2.addEventListener("click",function(){
+                this.openInfoWindow(infowindow);
+            });
+            
+            var opts5 = {
+              width : 200,     // 信息窗口宽度
+              height: 100,     // 信息窗口高度
+              title : "海底捞王府井店" , // 信息窗口标题
+              enableMessage:true,//设置允许信息窗发送短息
+              message:"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+            }
+            var infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts5);  // 创建信息窗口对象 
+            marker3.addEventListener("click", function(){          
+                this.openInfoWindow(infoWindow,point); //开启信息窗口
+            });
+            
+            map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+            map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+        </script>
+        <script src="js/top.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
